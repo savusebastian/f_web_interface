@@ -1,0 +1,100 @@
+// Font Includes
+// ================================
+// @font-face {
+// 	font-family: 'IcoMoon';
+// 	font-style: normal;
+// 	font-weight: 400;
+//
+// 	src: url('../fonts/icomoon.eot');
+// 	src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+// 		 url('../fonts/icomoon.woff') format('woff'),
+// 		 url('../fonts/icomoon.woff2') format('woff2'),
+// 		 url('../fonts/icomoon.ttf') format('truetype'),
+// 		 url('../fonts/icomoon.svg#IcoMoon') format('svg');
+// }
+
+
+// Default Heading Style
+// ================================
+h1 {
+	// color: $s0;
+	// font-size: $h1-size;
+	// line-height: $h1-line-height;
+	margin: 0 0 $h1-margin;
+}
+
+h2 {
+	// color: $s0;
+	// font-size: $h2-size;
+	// line-height: $h2-line-height;
+	margin: 0 0 $h2-margin;
+}
+
+h3 {
+	// color: $s0;
+	// font-size: $h3-size;
+	// line-height: $h3-line-height;
+	margin: 0 0 $h3-margin;
+}
+
+h4 {
+	// color: $s0;
+	// font-size: $h4-size;
+	// line-height: $h4-line-height;
+	margin: 0 0 $h4-margin;
+}
+
+h5 {
+	// color: $s0;
+	// font-size: $h5-size;
+	// line-height: $h5-line-height;
+	margin: 0 0 $h5-margin;
+}
+
+h6 {
+	// color: $s0;
+	// font-size: $h6-size;
+	// line-height: $h6-line-height;
+	margin: 0 0 $h6-margin;
+}
+
+
+// Paragraphs
+// ==============================
+p {
+	margin: 0 0 20px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+// Anchors
+// ==============================
+a {
+	display: block;
+	color: $s0;
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
+
+
+// Lists
+// ==============================
+// ul, ol {}
+
+// If the design has pretty little icons, use ol to style them up
+// ol {
+// 	li {
+// 		&:before {}
+// 	}
+// }
+
+@media(prefers-color-scheme: dark) {
+	h1, h2, h3, h4, h5, h6, a {
+		color: $s8;
+	}
+}

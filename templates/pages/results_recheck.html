@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content">
+	<h1>Links found: {{ counter }}</h1>
+
+	{% if not links %}
+	<p>No links with the class <strong>{{ class_name }}</strong> and don't contain <strong>{{ class_name2 }}</strong> were found</p>
+	{% else %}
+	{% for link in links %}
+	<p><a href="{{ link }}">{{ link }}</a></p>
+	{% endfor %}
+	{% endif %}
+</div>
+{% endblock %}

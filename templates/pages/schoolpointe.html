@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content">
+	<h1>Scraper Tool</h1>
+	<h3>Please don't close the tab or browser while it is running.</h3>
+	<h3>It can take multiple hours to run depending on the amount of content (eg: 170 schools ~ 36 hours)</h3>
+	<h3>Also sites from different clients might be on the same server. Overload with requests will result in a kick (at best). Maybe even ip ban (at worst)</h3>
+	<h3>Reach out if you encounter issues: sebi.savu@geledia.ro</h3>
+
+	<form action="{% url 'results_schoolpointe' %}" method="post">
+		{% csrf_token %}
+		<label>Links separated by comma(,). No slash at the end. Link has www</label>
+		<input type="text" name="site" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." />
+		<label>Id or class for main nav. Find a unique value</label>
+		<input type="text" list="main-nav" name="main_nav" placeholder="Empty" />
+		<label>A way to identify a list with its children.</label>
+		<input type="text" list="list-items" name="list_items" placeholder="If main nav is empty select first option" v-model="input2" />
+		<label>Id or class for School title. Find a unique value</label>
+		<input type="text" list="school-title" name="school_title" placeholder="id=ctl00_ctl00_header_header_ctl00_lnkSchoolHome2" v-model="input3" />
+		<label>Id or class for main content. Find a unique value</label>
+		<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" v-model="input4" />
+		<label>Id or class for page navigation(tier 2, tier 3, tier 4). If this is the same as the level 2 from main nav leave empty. Find a unique value</label>
+		<input type="text" list="page-nav" name="page_nav" placeholder="Empty" />
+		<label>Id or class for first column of content. Find a unique value</label>
+		<input type="text" list="column1" name="col1" placeholder="class_=col-xs-12" v-model="input5" />
+		<label>Id or class for second column of content, if there is any. Else leave empty. Find a unique value</label>
+		<input type="text" list="column2" name="col2" placeholder="Empty" />
+		<label>Id or class for calendar. Find a unique value</label>
+		<input type="text" list="calendar" name="calendar" placeholder="Empty" />
+		<label>Id or class for staff-directory. Find a unique value</label>
+		<input type="text" list="staff-dir" name="staff_dir" placeholder="Empty" />
+		<label>Id or class for news item. Find a unique value</label>
+		<input type="text" list="news" name="news" placeholder="Empty" />
+
+		<datalist id="main-nav">
+			<option>class_=district-top-nav</option>
+		</datalist>
+
+		<datalist id="list-items">
+			<option>without-image</option>
+			<option>ul > li</option>
+		</datalist>
+
+		<datalist id="school-title">
+			<option>id=ctl00_ctl00_header_header_ctl00_SchoolName</option>
+		</datalist>
+
+		<datalist id="main-content">
+			<option>id=site-body</option>
+		</datalist>
+
+		<datalist id="page-nav">
+			<option>id=quicklinks</option>
+		</datalist>
+
+		<datalist id="column1">
+			<option>class_=col-xs-12</option>
+		</datalist>
+
+		<datalist id="column2">
+			<option>class_=col-xs-12 col-md-3</option>
+		</datalist>
+
+		<datalist id="calendar">
+			<option>id=calendar</option>
+		</datalist>
+
+		<datalist id="staff-dir">
+			<option>class_=staff-directory</option>
+		</datalist>
+
+		<datalist id="news">
+			<option>id=news-list</option>
+		</datalist>
+
+		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input2.length < 1 || input3.length < 1 || input4.length < 1 || input5.length < 1">Search</button>
+	</form>
+</div>
+
+<div class="side-content">
+	<ul class="nav-level-1">
+		<li class="active">Examples for inputs</li>
+		<li class="active">Example class</li>
+		<li>class_=class1 class2 ...</li>
+		<li class="active">Example id</li>
+		<li>id=id</li>
+		<li class="active">Example for 3rd input</li>
+		<li>With class(es)</li>
+		<li>ul.class > li.class</li>
+		<li>With id</li>
+		<li>ul#id > li.class</li>
+	</ul>
+</div>
+
+<div class="loading-element"></div>
+{% endblock %}

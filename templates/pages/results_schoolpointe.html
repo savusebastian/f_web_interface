@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content">
+	<h1>Files</h1>
+	<h3>Duration: {{ time }}</h3>
+
+	{% for name, path in files.items %}
+	<p><a href="{{ path }}" download>{{ name }}</a></p>
+	{% endfor %}
+</div>
+{% endblock %}

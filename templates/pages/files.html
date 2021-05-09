@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content">
+	<h1>Files</h1>
+
+	{% if not files %}
+	<p>No files found.</p>
+	{% else %}
+	{% for path, name in files.items %}
+	<p><a href="{{ path }}" download>{{ name }}</a></p>
+	{% endfor %}
+	{% endif %}
+</div>
+{% endblock %}

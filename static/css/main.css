@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+html {
+  font-family: "Noto Sans", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #000000;
+    color: #cccccc;
+  }
+}
+
+body {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+}
+
+[class*=nav-level-] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+picture {
+  display: flex;
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
+  padding: 20px;
+  background: #cccccc;
+}
+.side-nav nav:not(:last-of-type) {
+  margin: 0 0 20px;
+  border-bottom: 1px solid #808080;
+  padding: 0 0 20px;
+}
+.side-nav a {
+  border-radius: 4px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.side-nav a.active {
+  background: #f9e3a2;
+}
+.side-nav a:hover, .side-nav a:focus {
+  background: #132743;
+  color: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  .side-nav {
+    background: #1a1a1a;
+  }
+  .side-nav a {
+    color: #999999;
+  }
+  .side-nav a.active {
+    color: #000000;
+  }
+  .side-nav a:hover, .side-nav a:focus {
+    background: #132743;
+    color: #ffffff;
+  }
+}
+@media (max-width: 1400px) {
+  .side-nav {
+    width: 200px;
+  }
+}
+
+main {
+  display: flex;
+  width: 100%;
+  padding: 20px 0 20px 240px;
+}
+main .main-content {
+  flex-grow: 1;
+  padding: 0 40px;
+}
+main .side-content {
+  width: 340px;
+  padding: 0 40px;
+}
+main .side-content .active {
+  border: 0;
+  background: #132743;
+  color: #ffffff;
+}
+main .side-content li {
+  border: 1px solid #cccccc;
+  border-top: 0;
+  padding: 10px 20px;
+}
+main .side-content li:first-of-type {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+main .side-content li:last-of-type {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+main .loading-element {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ff6187;
+  border-top: 6px solid #db1d4b;
+  border-radius: 100%;
+  animation: loading 1s infinite linear;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  main .side-content .active {
+    border: 0;
+    background: #f9e3a2;
+    color: #000000;
+  }
+  main .side-content li {
+    background: #1a1a1a;
+    border: 1px solid #000000;
+  }
+}
+@media (max-width: 1400px) {
+  main {
+    padding: 20px 0 20px 200px;
+  }
+  main .main-content {
+    padding: 0 20px;
+  }
+  main .side-content {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+}
+
+button {
+  margin: 0 0 20px;
+  border: 0;
+  border-radius: 4px;
+  background: #f9e3a2;
+  padding: 10px;
+  width: 100%;
+  max-width: 150px;
+  color: #000000;
+  cursor: pointer;
+}
+button:hover, button:focus {
+  background: #132743;
+  color: #ffffff;
+}
+button:disabled {
+  background: #db1d4b;
+  color: #ffffff;
+  cursor: default;
+}
+
+h1 {
+  margin: 0 0 40px;
+}
+
+h2 {
+  margin: 0 0 20px;
+}
+
+h3 {
+  margin: 0 0 20px;
+}
+
+h4 {
+  margin: 0 0 20px;
+}
+
+h5 {
+  margin: 0 0 20px;
+}
+
+h6 {
+  margin: 0 0 20px;
+}
+
+p {
+  margin: 0 0 20px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  display: block;
+  color: #000000;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  h1, h2, h3, h4, h5, h6, a {
+    color: #cccccc;
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+form section label, form section input {
+  margin: 0 5px 0 0;
+}
+form label {
+  margin-bottom: 10px;
+}
+form input {
+  max-width: 800px;
+  margin-bottom: 20px;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 5px;
+  background: #cccccc;
+}
+
+/*# sourceMappingURL=main.css.map */

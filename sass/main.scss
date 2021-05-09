@@ -1,0 +1,28 @@
+// Basic
+// ==============================
+@import
+	'constants',
+	'default';
+
+
+// Structure
+// ==============================
+@import
+	'structure/_side_nav',
+	'structure/main_content';
+
+
+// Content
+// ==============================
+@import
+	'content/buttons',
+	'content/html';
+
+
+// Modules
+// ==============================
+@import
+	'modules/forms';
+
+
+// sass --watch Documents/python_scripts/f_web_interface/sass/main.scss Documents/python_scripts/f_web_interface/static/css/main.css
