@@ -142,6 +142,7 @@ def results_schoolpointe_view(request):
 		text = font.sub('', text)
 		text = fonte.sub('', text)
 		text = fontc.sub('', text)
+		text = re.sub('<!--|-->', '', text)
 
 		return text.strip()
 
@@ -231,7 +232,7 @@ def results_schoolpointe_view(request):
 		# if web_page != '#':
 		try:
 			web_link = requests.get(web_page, timeout=10).content
-			web_soup = BeautifulSoup(re.sub('<!--|-->', '', page), 'html.parser')
+			web_soup = BeautifulSoup(web_link, 'html.parser')
 
 			if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
 				meta_title = str(web_soup.find_all('meta', attrs={'name': 'title'}))
