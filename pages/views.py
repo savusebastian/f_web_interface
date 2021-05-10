@@ -15,10 +15,6 @@ def home_view(request):
 	return render(request, 'pages/home.html')
 
 
-def recheck_view(request):
-	return render(request, 'pages/recheck.html')
-
-
 def results_view(request):
 	def check_by_class(web_page, class_name, search_content):
 		try:
@@ -63,50 +59,6 @@ def results_view(request):
 	}
 
 	return render(request, 'pages/results.html', context)
-
-
-def results_recheck_view(request):
-	def check_by_class(web_page, class_name, class_name2):
-		try:
-			web_link = requests.get(web_page)
-			web_soup = BeautifulSoup(web_link.content, 'html.parser')
-			result = web_soup.find(class_='fsPageContent').find(class_=class_name)
-			post = web_soup.find(class_='fsPageContent').find(class_=class_name2)
-
-			return result, post
-
-		except:
-			print('Page not working:', web_page)
-
-
-	url = request.POST.get('search')
-	class_name = request.POST.get('by_class')
-	class_name2 = request.POST.get('by_class2')
-	print('>>', url, '>>', class_name, class_name2)
-	page = requests.get(url)
-	soup = BeautifulSoup(page.content, 'html.parser')
-	urls = soup.find_all('loc')
-	links = []
-	counter = 0
-
-	for link in urls:
-		if link.get_text()[0] != 'h':
-			news, posts = check_by_class('https:' + link.get_text(), class_name, class_name2)
-		else:
-			news, posts = check_by_class(link.get_text(), class_name, class_name2)
-
-		if news != None and posts == None:
-			links.append(link.get_text())
-			counter += 1
-
-	context = {
-		'links': links,
-		'class_name': class_name,
-		'class_name2': class_name2,
-		'counter': counter
-	}
-
-	return render(request, 'pages/results_recheck.html', context)
 
 
 def schoolpointe_view(request):

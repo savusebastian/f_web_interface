@@ -23,9 +23,6 @@ urlpatterns = [
 	path('', home_view, name='home'),
 	path('results', results_view, name='results'),
 
-	path('recheck', recheck_view, name='recheck'),
-	path('results_recheck', results_recheck_view, name='results_recheck'),
-
 	path('schoolpointe', schoolpointe_view, name='schoolpointe'),
 	path('results_schoolpointe', results_schoolpointe_view, name='results_schoolpointe'),
 

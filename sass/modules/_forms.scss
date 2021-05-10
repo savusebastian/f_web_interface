@@ -5,25 +5,39 @@ form {
 	flex-direction: column;
 
 	section {
-		display: flex;
-		align-items: center;
 		margin-bottom: 20px;
 
-		label, input {
-			margin: 0 5px 0 0;
+		label {
+			display: flex;
+			align-items: center;
+			margin: 0;
+		}
+
+		input {
+			width: auto;
+			max-width: none;
+			margin: 0 10px 0 0;
 		}
 	}
 
 	label {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
+	}
+
+	p {
+		margin: 0 0 10px;
 	}
 
 	input {
+		width: 100%;
 		max-width: 800px;
-		margin-bottom: 20px;
 		border: 0;
 		border-radius: 4px;
 		padding: 10px 5px;
 		background: $s8;
+
+		&[type=checkbox] {
+			cursor: pointer;
+		}
 	}
 }

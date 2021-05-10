@@ -8,14 +8,20 @@
 
 	<form action="{% url 'results' %}" method="post">
 		{% csrf_token %}
-		<label>Add at the end of a link fs/pages/sitemap.xml -> "https://ics.redesign.finalsite.com/fs/pages/sitemap.xml"</label>
-		<input type="text" name="search" v-model="searchInput" />
-		<label>Class name: "fsNews". Click, double click or start typing for options</label>
-		<input type="text" list="options" name="by_class" v-model="classInput" />
+		<label>
+			<p>Add at the end of a link fs/pages/sitemap.xml -> "https://ics.redesign.finalsite.com/fs/pages/sitemap.xml"</p>
+			<input type="text" name="search" v-model="searchInput" />
+		</label>
+		<label>
+			<p>Class name: "fsNews". Click, double click or start typing for options</p>
+			<input type="text" list="options" name="by_class" v-model="classInput" />
+		</label>
 
 		<section>
-			<input type="checkbox" name="search_content" />
-			<label>Search main content</label>
+			<label>
+				<input type="checkbox" name="search_content" />
+				<p>Search main content</p>
+			</label>
 		</section>
 
 		<datalist id="options">

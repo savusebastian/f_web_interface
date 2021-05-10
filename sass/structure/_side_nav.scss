@@ -4,7 +4,7 @@
 	left: 0;
 	height: 100vh;
 	width: 240px;
-	padding: 20px;
+	padding: 20px 15px;
 	background: $s8;
 
 	nav:not(:last-of-type) {
@@ -13,9 +13,15 @@
 		padding: 0 0 20px;
 	}
 
+	li.active {
+		margin: 0 0 10px;
+		padding: 0 10px;
+		font-size: 20px;
+	}
+
 	a {
 		border-radius: 4px;
-		padding: 10px 20px;
+		padding: 10px;
 		text-decoration: none;
 
 		&.active {

@@ -2,36 +2,58 @@
 
 {% block content %}
 <div class="main-content">
-	<h1>Scraper Tool</h1>
+	<h1>SchoolPointe Scraper</h1>
 	<h3>Please don't close the tab or browser while it is running.</h3>
-	<h3>It can take multiple hours to run depending on the amount of content (eg: 170 schools ~ 36 hours)</h3>
+	<h3>It can take multiple hours to run depending on the amount of content (eg: 2000 pages ~ 1 hour)</h3>
 	<h3>Also sites from different clients might be on the same server. Overload with requests will result in a kick (at best). Maybe even ip ban (at worst)</h3>
 	<h3>Reach out if you encounter issues: sebi.savu@geledia.ro</h3>
 
 	<form action="{% url 'results_schoolpointe' %}" method="post">
 		{% csrf_token %}
-		<label>Links separated by comma(,). No slash at the end. Link has www</label>
-		<input type="text" name="site" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." />
-		<label>Id or class for main nav. Find a unique value</label>
-		<input type="text" list="main-nav" name="main_nav" placeholder="Empty" />
-		<label>A way to identify a list with its children.</label>
-		<input type="text" list="list-items" name="list_items" placeholder="If main nav is empty select first option" v-model="input2" />
-		<label>Id or class for School title. Find a unique value</label>
-		<input type="text" list="school-title" name="school_title" placeholder="id=ctl00_ctl00_header_header_ctl00_lnkSchoolHome2" v-model="input3" />
-		<label>Id or class for main content. Find a unique value</label>
-		<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" v-model="input4" />
-		<label>Id or class for page navigation(tier 2, tier 3, tier 4). If this is the same as the level 2 from main nav leave empty. Find a unique value</label>
-		<input type="text" list="page-nav" name="page_nav" placeholder="Empty" />
-		<label>Id or class for first column of content. Find a unique value</label>
-		<input type="text" list="column1" name="col1" placeholder="class_=col-xs-12" v-model="input5" />
-		<label>Id or class for second column of content, if there is any. Else leave empty. Find a unique value</label>
-		<input type="text" list="column2" name="col2" placeholder="Empty" />
-		<label>Id or class for calendar. Find a unique value</label>
-		<input type="text" list="calendar" name="calendar" placeholder="Empty" />
-		<label>Id or class for staff-directory. Find a unique value</label>
-		<input type="text" list="staff-dir" name="staff_dir" placeholder="Empty" />
-		<label>Id or class for news item. Find a unique value</label>
-		<input type="text" list="news" name="news" placeholder="Empty" />
+		<label>
+			<p>Links separated by comma(,). No slash at the end. First link has www</p>
+			<input type="text" name="site" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." />
+		</label>
+		<label>
+			<p>Unique id or class for main navigation</p>
+			<input type="text" list="main-nav" name="main_nav" placeholder="Empty" />
+		</label>
+		<label>
+			<p>A way to identify a list with its children</p>
+			<input type="text" list="list-items" name="list_items" placeholder="If main nav is empty select first option" v-model="input2" />
+		</label>
+		<label>
+			<p>Unique id or class for School title</p>
+			<input type="text" list="school-title" name="school_title" placeholder="id=ctl00_ctl00_header_header_ctl00_lnkSchoolHome2" v-model="input3" />
+		</label>
+		<label>
+			<p>Unique id or class for main content</p>
+			<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" v-model="input4" />
+		</label>
+		<label>
+			<p>Unique id or class for page navigation(tier 2, tier 3, tier 4) If this is the same as the level 2 from main nav leave empty</p>
+			<input type="text" list="page-nav" name="page_nav" placeholder="Empty" />
+		</label>
+		<label>
+			<p>Unique id or class for first column of content</p>
+			<input type="text" list="column1" name="col1" placeholder="class_=col-xs-12" v-model="input5" />
+		</label>
+		<label>
+			<p>Unique id or class for second column of content, if there is any else leave empty</p>
+			<input type="text" list="column2" name="col2" placeholder="Empty" />
+		</label>
+		<label>
+			<p>Unique id or class for calendar</p>
+			<input type="text" list="calendar" name="calendar" placeholder="Empty" />
+		</label>
+		<label>
+			<p>Unique id or class for staff-directory</p>
+			<input type="text" list="staff-dir" name="staff_dir" placeholder="Empty" />
+		</label>
+		<label>
+			<p>Unique id or class for news item</p>
+			<input type="text" list="news" name="news" placeholder="Empty" />
+		</label>
 
 		<datalist id="main-nav">
 			<option>class_=district-top-nav</option>
@@ -78,7 +100,7 @@
 	</form>
 </div>
 
-<div class="side-content">
+<!-- <div class="side-content">
 	<ul class="nav-level-1">
 		<li class="active">Examples for inputs</li>
 		<li class="active">Example class</li>
@@ -91,7 +113,7 @@
 		<li>With id</li>
 		<li>ul#id > li.class</li>
 	</ul>
-</div>
+</div> -->
 
 <div class="loading-element"></div>
 {% endblock %}
