@@ -164,7 +164,7 @@ def results_blackboard_view(request):
 		return col
 
 
-	def get_content(web_page, post_main_content, post_page_nav, post_col1, post_col2, post_calendar, post_staff_dir, post_news, splitter):
+	def get_content(web_page, post_page_nav, splitter):
 		col1 = 'Flagged'
 		col2, col3, col4 = '', '', ''
 		col_num = '1'
@@ -290,7 +290,8 @@ def results_blackboard_view(request):
 	# post_staff_dir = request.POST.get('staff_dir')
 	# post_news = request.POST.get('news')
 	# extra_links = request.POST.get('extra')
-	print('>>', post_sites, post_sitemap, post_list_items, post_school, post_main_content, post_page_nav, post_col1, post_col2, post_calendar, post_staff_dir, post_news)
+	# print('>>', post_sites, post_sitemap, post_list_items, post_school, post_main_content, post_page_nav, post_col1, post_col2, post_calendar, post_staff_dir, post_news)
+	print('>>', post_sites, post_page_nav)
 
 	# Process inputs
 	all_sites = post_sites.split(',')
@@ -348,7 +349,7 @@ def results_blackboard_view(request):
 
 						if not external_link:
 							page_counter += 1
-							col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, post_main_content, post_page_nav, post_col1, post_col2, post_calendar, post_staff_dir, post_news, splitter)
+							col1, col2, col3, col4, col_num, nav_sec, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, post_page_nav, splitter)
 							issue_pages_counter += content_ipc
 
 							if group_links[0].get_text() != link.get_text():
@@ -379,7 +380,7 @@ def results_blackboard_view(request):
 
 									if not external_link:
 										page_counter += 1
-										nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, post_main_content, post_page_nav, post_col1, post_col2, post_calendar, post_staff_dir, post_news, splitter)
+										nav_col1, nav_col2, nav_col3, nav_col4, nav_col_num, _, meta_title, meta_keywords, meta_desc, form, embed, iframe, calendar, staff, news, content_ipc = get_content(page_link, post_page_nav, splitter)
 										issue_pages_counter += content_ipc
 										csv_writer.writerow([str(page_link), str(group_links[0].get_text()), str(link.get_text()), str(nav_link.get_text()), '', nav_col_num, nav_col1, nav_col2, nav_col3, nav_col4, meta_title, meta_keywords, meta_desc])
 
