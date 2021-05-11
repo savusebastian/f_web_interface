@@ -268,9 +268,20 @@ form input {
   border-radius: 4px;
   padding: 10px 5px;
   background: #cccccc;
+  font-size: 1rem;
 }
 form input[type=checkbox] {
   cursor: pointer;
+}
+form textarea {
+  width: 100%;
+  max-width: 800px;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 5px;
+  background: #cccccc;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

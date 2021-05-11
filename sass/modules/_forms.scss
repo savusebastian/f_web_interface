@@ -35,9 +35,21 @@ form {
 		border-radius: 4px;
 		padding: 10px 5px;
 		background: $s8;
+		font-size: 1rem;
 
 		&[type=checkbox] {
 			cursor: pointer;
 		}
+	}
+
+	textarea {
+		width: 100%;
+		max-width: 800px;
+		border: 0;
+		border-radius: 4px;
+		padding: 10px 5px;
+		background: $s8;
+		font-family: inherit;
+		font-size: 1rem;
 	}
 }

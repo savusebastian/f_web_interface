@@ -23,6 +23,9 @@ urlpatterns = [
 	path('', home_view, name='home'),
 	path('results', results_view, name='results'),
 
+	path('blackboard', blackboard_view, name='blackboard'),
+	path('results_blackboard', results_blackboard_view, name='results_blackboard'),
+
 	path('schoolpointe', schoolpointe_view, name='schoolpointe'),
 	path('results_schoolpointe', results_schoolpointe_view, name='results_schoolpointe'),
 

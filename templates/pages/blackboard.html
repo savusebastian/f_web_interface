@@ -11,11 +11,11 @@
 	<form action="{% url 'results_schoolpointe' %}" method="post">
 		{% csrf_token %}
 		<label>
-			<p>Links separated by comma(,). No slash at the end. First link has www</p>
+			<p>Sitemap links separated by comma(,). No slash at the end. First link has www</p>
 			<!-- <input type="text" name="site" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." /> -->
-			<textarea name="site" rows="3" cols="80" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..."></textarea>
+			<textarea name="site" rows="3" cols="80" v-model="input1" placeholder="https://www.jpschools.org/site/Default.aspx?PageType=15&SiteID=4&SectionMax=50&DirectoryType=6,https://www.jpschools.org/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=50..."></textarea>
 		</label>
-		<label>
+		<!-- <label>
 			<p>Unique id or class for main navigation</p>
 			<input type="text" list="main-nav" name="main_nav" placeholder="Empty" />
 		</label>
@@ -30,12 +30,12 @@
 		<label>
 			<p>Unique id or class for main content</p>
 			<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" v-model="input4" />
-		</label>
+		</label> -->
 		<label>
 			<p>Unique id or class for page navigation(tier 2, tier 3, tier 4). If this is the same as the level 2 from main nav leave empty</p>
 			<input type="text" list="page-nav" name="page_nav" placeholder="Empty" />
 		</label>
-		<label>
+		<!-- <label>
 			<p>Unique id or class for first column of content</p>
 			<input type="text" list="column1" name="col1" placeholder="class_=col-xs-12" v-model="input5" />
 		</label>
@@ -54,13 +54,13 @@
 		<label>
 			<p>Unique id or class for news item</p>
 			<input type="text" list="news" name="news" placeholder="Empty" />
-		</label>
+		</label> -->
 		<!-- <label>
 			<p>Additional links that need to be scraped for content. Links separated by comma(,). No slash at the end</p>
 			<textarea name="extra" rows="6" cols="80" placeholder="Empty"></textarea>
 		</label> -->
 
-		<datalist id="main-nav">
+		<!-- <datalist id="main-nav">
 			<option>class_=district-top-nav</option>
 		</datalist>
 
@@ -75,13 +75,13 @@
 
 		<datalist id="main-content">
 			<option>id=site-body</option>
-		</datalist>
+		</datalist> -->
 
 		<datalist id="page-nav">
-			<option>id=quicklinks</option>
+			<option>class_=pagenavigation</option>
 		</datalist>
 
-		<datalist id="column1">
+		<!-- <datalist id="column1">
 			<option>class_=col-xs-12</option>
 		</datalist>
 
@@ -99,7 +99,7 @@
 
 		<datalist id="news">
 			<option>id=news-list</option>
-		</datalist>
+		</datalist> -->
 
 		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input2.length < 1 || input3.length < 1 || input4.length < 1 || input5.length < 1">Search</button>
 	</form>
