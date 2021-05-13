@@ -1,15 +1,18 @@
 <div class="side-nav">
 	<nav>
 		<ul class="nav-level-1">
-			<li><a href="{% url 'home' %}">Check news</a></li>
+			<li class="active">Internal Scraper</li>
+			<li><a href="{% url 'check_news' %}">News Manager Finder</a></li>
 		</ul>
 	</nav>
 
 	<nav>
 		<ul class="nav-level-1">
-			<li class="active">Internal Scraper</li>
+			<li class="active">External Scraper</li>
+			<li><a href="{% url 'custom' %}">Custom</a></li>
 			<li><a href="{% url 'blackboard' %}">Blackboard</a></li>
 			<li><a href="{% url 'schoolpointe' %}">SchoolPointe</a></li>
+			<li><a href="{% url 'vpn' %}">Edlio/School Messenger</a></li>
 		</ul>
 	</nav>
 

@@ -5,7 +5,7 @@
 	<h1>SchoolPointe Scraper</h1>
 	<h3>Please don't close the tab or browser while it is running.</h3>
 	<h3>It can take multiple hours to run depending on the amount of content (eg: 2000 pages ~ 1 hour)</h3>
-	<h3>Also sites from different clients might be on the same server. Overload with requests will result in a kick (at best). Maybe even ip ban (at worst)</h3>
+	<h3>Also sites from different clients might be on the same server. Too many requests will result in scape failure (at best) or even ip ban (at worst)</h3>
 	<h3>Reach out if you encounter issues: sebi.savu@geledia.ro</h3>
 
 	<form action="{% url 'results_schoolpointe' %}" method="post">
@@ -13,7 +13,7 @@
 		<label>
 			<p>Links separated by comma(,). No slash at the end. First link has www</p>
 			<!-- <input type="text" name="site" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." /> -->
-			<textarea name="site" rows="3" cols="80" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..."></textarea>
+			<textarea name="site" rows="3" cols="80" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." v-model="input1"></textarea>
 		</label>
 		<label>
 			<p>Unique id or class for main navigation</p>

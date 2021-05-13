@@ -20,14 +20,18 @@ from pages.views import *
 
 urlpatterns = [
 	path('admin/', admin.site.urls),
-	path('', home_view, name='home'),
+	path('check_news', home_view, name='check_news'),
 	path('results', results_view, name='results'),
+
+	path('custom', custom_view, name='custom'),
+	path('results_custom', results_custom_view, name='results_custom'),
 
 	path('blackboard', blackboard_view, name='blackboard'),
 	path('results_blackboard', results_blackboard_view, name='results_blackboard'),
 
-	path('schoolpointe', schoolpointe_view, name='schoolpointe'),
+	path('', schoolpointe_view, name='schoolpointe'),
 	path('results_schoolpointe', results_schoolpointe_view, name='results_schoolpointe'),
 
+	path('edlio_school_messenger', vpn_view, name='vpn'),
 	path('files', files_view, name='files'),
 ]

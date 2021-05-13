@@ -2,42 +2,42 @@
 
 {% block content %}
 <div class="main-content">
-	<h1>SchoolPointe Scraper</h1>
+	<h1>Custom Scraper</h1>
 	<h3>Please don't close the tab or browser while it is running.</h3>
 	<h3>It can take multiple hours to run depending on the amount of content (eg: 2000 pages ~ 1 hour)</h3>
 	<h3>Also sites from different clients might be on the same server. Too many requests will result in scape failure (at best) or even ip ban (at worst)</h3>
 	<h3>Reach out if you encounter issues: sebi.savu@geledia.ro</h3>
 
-	<form action="{% url 'results_blackboard' %}" method="post">
+	<form action="{% url 'results_custom' %}" method="post">
 		{% csrf_token %}
 		<label>
-			<p>Sitemap links separated by comma(,). No slash at the end. First link has www</p>
+			<p>Links separated by comma(,). No slash at the end. First link has www</p>
 			<!-- <input type="text" name="site" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." /> -->
-			<textarea name="site" rows="3" cols="80" placeholder="https://www.jpschools.org/site/Default.aspx?PageType=15&SiteID=4&SectionMax=50&DirectoryType=6,https://www.jpschools.org/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=50..." v-model="input1"></textarea>
+			<textarea name="site" rows="3" cols="80" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." v-model="input1"></textarea>
 		</label>
-		<!-- <label>
+		<label>
 			<p>Unique id or class for main navigation</p>
 			<input type="text" list="main-nav" name="main_nav" placeholder="Empty" />
 		</label>
 		<label>
 			<p>A way to identify a list with its children</p>
-			<input type="text" list="list-items" name="list_items" placeholder="If main nav is empty select first option" v-model="input2" />
+			<input type="text" list="list-items" name="list_items" placeholder="If main nav is empty select first option" v-model="input6" />
 		</label>
 		<label>
 			<p>Unique id or class for School title</p>
-			<input type="text" list="school-title" name="school_title" placeholder="id=ctl00_ctl00_header_header_ctl00_lnkSchoolHome2" v-model="input3" />
+			<input type="text" list="school-title" name="school_title" v-model="input7" />
 		</label>
 		<label>
 			<p>Unique id or class for main content</p>
-			<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" v-model="input4" />
-		</label> -->
+			<input type="text" list="main-content" name="main_content" v-model="input8" />
+		</label>
 		<label>
 			<p>Unique id or class for page navigation(tier 2, tier 3, tier 4). If this is the same as the level 2 from main nav leave empty</p>
 			<input type="text" list="page-nav" name="page_nav" placeholder="Empty" />
 		</label>
-		<!-- <label>
+		<label>
 			<p>Unique id or class for first column of content</p>
-			<input type="text" list="column1" name="col1" placeholder="class_=col-xs-12" v-model="input5" />
+			<input type="text" list="column1" name="col1" v-model="input9" />
 		</label>
 		<label>
 			<p>Unique id or class for second column of content, if there is any else leave empty</p>
@@ -54,7 +54,7 @@
 		<label>
 			<p>Unique id or class for news item</p>
 			<input type="text" list="news" name="news" placeholder="Empty" />
-		</label> -->
+		</label>
 		<!-- <label>
 			<p>Additional links that need to be scraped for content. Links separated by comma(,). No slash at the end</p>
 			<textarea name="extra" rows="6" cols="80" placeholder="Empty"></textarea>
@@ -62,26 +62,25 @@
 
 		<!-- <datalist id="main-nav">
 			<option>class_=district-top-nav</option>
-		</datalist>
+		</datalist> -->
 
 		<datalist id="list-items">
-			<option>without-image</option>
 			<option>ul > li</option>
 		</datalist>
 
-		<datalist id="school-title">
+		<!-- <datalist id="school-title">
 			<option>id=ctl00_ctl00_header_header_ctl00_SchoolName</option>
 		</datalist>
 
 		<datalist id="main-content">
 			<option>id=site-body</option>
-		</datalist> -->
-
-		<datalist id="page-nav">
-			<option>class_=pagenavigation</option>
 		</datalist>
 
-		<!-- <datalist id="column1">
+		<datalist id="page-nav">
+			<option>id=quicklinks</option>
+		</datalist>
+
+		<datalist id="column1">
 			<option>class_=col-xs-12</option>
 		</datalist>
 
@@ -101,11 +100,11 @@
 			<option>id=news-list</option>
 		</datalist> -->
 
-		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input2.length < 1 || input3.length < 1 || input4.length < 1 || input5.length < 1">Search</button>
+		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input6.length < 1 || input7.length < 1 || input8.length < 1 || input9.length < 1">Search</button>
 	</form>
 </div>
 
-<!-- <div class="side-content">
+<div class="side-content">
 	<ul class="nav-level-1">
 		<li class="active">Examples for inputs</li>
 		<li class="active">Example class</li>
@@ -118,7 +117,7 @@
 		<li>With id</li>
 		<li>ul#id > li.class</li>
 	</ul>
-</div> -->
+</div>
 
 <div class="loading-element"></div>
 {% endblock %}
