@@ -1663,11 +1663,11 @@ def results_schoolpointe_view(request):
 			print('Finished:', site)
 
 	files['report.csv'] = f'static/files/{mainfolder}/report.csv'
-	print('Finished:', round((time() - start_time) / 3600, 2), 'h')
+	print('Finished:', round((time() - start_time) 60, 2), 'mins')
 
 	context = {
 		'files': files,
-		'time': str(round((time() - start_time) / 3600, 2)) + ' hours'
+		'time': f'{str(round((time() - start_time) 60, 2))} mins'
 	}
 
 	return render(request, 'pages/export_page.html', context)
