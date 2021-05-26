@@ -14,14 +14,12 @@ const VueApp = {
 			classInput: '',
 			classInput2: '',
 			input1: '',
-			input2: 'without-image',
-			input3: 'id=ctl00_ctl00_header_ctl00_buildingName',
-			input4: 'id=site-body',
-			input5: 'class_=col-xs-12',
+			input2: 'district,',
+			input3: '',
+			input4: '',
 			input6: '',
 			input7: '',
 			input8: '',
-			input9: '',
 		}
 	}
 }

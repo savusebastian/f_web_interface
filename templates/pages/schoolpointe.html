@@ -16,44 +16,32 @@
 			<textarea name="site" rows="3" cols="80" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." v-model="input1"></textarea>
 		</label>
 		<label>
-			<p>Unique id or class for main navigation</p>
-			<input type="text" list="main-nav" name="main_nav" placeholder="Empty" />
+			<p>Add extra end for schools - School high school -> shs</p>
+			<textarea name="school_title" rows="3" cols="80" placeholder="district,shs,sms,ses..." v-model="input2"></textarea>
 		</label>
 		<label>
-			<p>A way to identify a list with its children</p>
-			<input type="text" list="list-items" name="list_items" placeholder="If main nav is empty select first option" v-model="input2" />
-		</label>
-		<label>
-			<p>Unique id or class for School title</p>
-			<input type="text" list="school-title" name="school_title" placeholder="id=ctl00_ctl00_header_header_ctl00_lnkSchoolHome2" v-model="input3" />
+			<p>Unique id or class for mobile navigation (since it has all links)</p>
+			<input type="text" list="main-nav" name="main_nav" placeholder="Empty" v-model="input3" />
 		</label>
 		<label>
 			<p>Unique id or class for main content</p>
 			<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" v-model="input4" />
 		</label>
-		<label>
+		<!-- <label>
 			<p>Unique id or class for page navigation(tier 2, tier 3, tier 4). If this is the same as the level 2 from main nav leave empty</p>
 			<input type="text" list="page-nav" name="page_nav" placeholder="Empty" />
-		</label>
-		<label>
-			<p>Unique id or class for first column of content</p>
-			<input type="text" list="column1" name="col1" placeholder="class_=col-xs-12" v-model="input5" />
-		</label>
-		<label>
-			<p>Unique id or class for second column of content, if there is any else leave empty</p>
-			<input type="text" list="column2" name="col2" placeholder="Empty" />
-		</label>
+		</label> -->
 		<label>
 			<p>Unique id or class for calendar</p>
-			<input type="text" list="calendar" name="calendar" placeholder="Empty" />
+			<input type="text" list="calendar" name="calendar" value="id=calendar" placeholder="Empty" />
 		</label>
 		<label>
 			<p>Unique id or class for staff-directory</p>
-			<input type="text" list="staff-dir" name="staff_dir" placeholder="Empty" />
+			<input type="text" list="staff-dir" name="staff_dir" value="class_=staff-directory" placeholder="Empty" />
 		</label>
 		<label>
 			<p>Unique id or class for news item</p>
-			<input type="text" list="news" name="news" placeholder="Empty" />
+			<input type="text" list="news" name="news" value="id=news-list" placeholder="Empty" />
 		</label>
 		<!-- <label>
 			<p>Additional links that need to be scraped for content. Links separated by comma(,). No slash at the end</p>
@@ -61,33 +49,28 @@
 		</label> -->
 
 		<datalist id="main-nav">
-			<option>class_=district-top-nav</option>
+			<option>id=bs-example-navbar-collapse-1</option>
+			<option>id=MobileNav</option>
+			<option>id=bs-example-navbar-collapse-1</option>
 		</datalist>
 
-		<datalist id="list-items">
+		<!-- <datalist id="list-items">
 			<option>without-image</option>
 			<option>ul > li</option>
-		</datalist>
+		</datalist> -->
 
-		<datalist id="school-title">
+		<!-- <datalist id="school-title">
 			<option>id=ctl00_ctl00_header_header_ctl00_SchoolName</option>
-		</datalist>
+		</datalist> -->
 
 		<datalist id="main-content">
 			<option>id=site-body</option>
+			<option>class_=masterC alignment-stretch</option>
 		</datalist>
 
-		<datalist id="page-nav">
+		<!-- <datalist id="page-nav">
 			<option>id=quicklinks</option>
-		</datalist>
-
-		<datalist id="column1">
-			<option>class_=col-xs-12</option>
-		</datalist>
-
-		<datalist id="column2">
-			<option>class_=col-xs-12 col-md-3</option>
-		</datalist>
+		</datalist> -->
 
 		<datalist id="calendar">
 			<option>id=calendar</option>
@@ -101,7 +84,7 @@
 			<option>id=news-list</option>
 		</datalist>
 
-		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input2.length < 1 || input3.length < 1 || input4.length < 1 || input5.length < 1">Search</button>
+		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input2.length < 1 || input3.length < 1 || input4.length < 1">Search</button>
 	</form>
 </div>
 
