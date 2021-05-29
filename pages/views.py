@@ -1572,6 +1572,7 @@ def results_schoolpointe_view(request):
 			split_slash = site.split('/')
 			split_dot = site.split('.')
 			split_mixed = site.split('/')[2].split('.')
+			all_links = []
 
 			page = requests.get(site).content
 			soup = BeautifulSoup(page, 'html.parser')
