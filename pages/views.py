@@ -1976,7 +1976,7 @@ def results_extra_links_view(request):
 			csv_report.writerow([])
 
 			files[f'{school_name}.csv'] = f'static/files/{mainfolder}/{school_name}.csv'
-			print('Finished:', site)
+			# print('Finished:', site)
 
 	files['report.csv'] = f'static/files/{mainfolder}/report.csv'
 	print('Finished:', round((time() - start_time) / 60, 2), 'minutes')
