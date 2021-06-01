@@ -263,7 +263,6 @@ form p {
 }
 form input {
   width: 100%;
-  max-width: 800px;
   border: 0;
   border-radius: 4px;
   padding: 10px 5px;
@@ -275,7 +274,6 @@ form input[type=checkbox] {
 }
 form textarea {
   width: 100%;
-  max-width: 800px;
   border: 0;
   border-radius: 4px;
   padding: 10px 5px;
