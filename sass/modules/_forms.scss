@@ -30,7 +30,6 @@ form {
 
 	input {
 		width: 100%;
-		max-width: 100%;
 		border: 0;
 		border-radius: 4px;
 		padding: 10px 5px;
@@ -43,8 +42,8 @@ form {
 	}
 
 	textarea {
+		resize: vertical;
 		width: 100%;
-		max-width: 100%;
 		border: 0;
 		border-radius: 4px;
 		padding: 10px 5px;
