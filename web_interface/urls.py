@@ -32,6 +32,9 @@ urlpatterns = [
 	path('', schoolpointe_view, name='schoolpointe'),
 	path('results_schoolpointe', results_schoolpointe_view, name='results_schoolpointe'),
 
+	path('extra_links', extra_links_view, name='extra_links'),
+	path('results_extra_links', results_extra_links_view, name='results_extra_links'),
+
 	path('edlio_school_messenger', vpn_view, name='vpn'),
 	path('files', files_view, name='files'),
 ]

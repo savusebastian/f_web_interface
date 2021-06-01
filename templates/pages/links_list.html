@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content">
+	<h1>Extra Links Scraper</h1>
+	<h3>Please don't close the tab or browser while it is running.</h3>
+	<h3>Reach out if you encounter issues: sebi.savu@geledia.ro</h3>
+
+	<form action="{% url 'results_extra_links' %}" method="post">
+		{% csrf_token %}
+		<label>
+			<p>Links separated by comma(,). No slash at the end. First link has www</p>
+			<textarea name="site" rows="3" cols="80" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." v-model="input1"></textarea>
+		</label>
+		<label>
+			<p>Add the name of the school</p>
+			<textarea name="school_title" rows="3" cols="80" placeholder="district,shs,sms,ses..." v-model="input2"></textarea>
+		</label>
+		<label>
+			<p>Unique id or class for main content</p>
+			<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" v-model="input4" />
+		</label>
+
+		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input2.length < 1 || input4.length < 1">Search</button>
+	</form>
+</div>
+
+<div class="loading-element"></div>
+{% endblock %}

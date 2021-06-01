@@ -1678,7 +1678,7 @@ def results_schoolpointe_view(request):
 
 
 def extra_links_view(request):
-	return render(request, 'pages/schoolpointe.html')
+	return render(request, 'pages/links_list.html')
 
 
 def results_extra_links_view(request):
