@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="main-content">
-	<h1>SchoolPointe Scraper</h1>
+	<h1>Blackboard Scraper</h1>
 	<h3>Please don't close the tab or browser while it is running.</h3>
 	<h3>It can take multiple hours to run depending on the amount of content (eg: 2000 pages ~ 1 hour)</h3>
 	<h3>Also sites from different clients might be on the same server. Too many requests will result in scape failure (at best) or even ip ban (at worst)</h3>
@@ -12,7 +12,6 @@
 		{% csrf_token %}
 		<label>
 			<p>Sitemap links separated by comma(,). No slash at the end. First link has www</p>
-			<!-- <input type="text" name="site" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." /> -->
 			<textarea name="site" rows="3" cols="80" placeholder="https://www.jpschools.org/site/Default.aspx?PageType=15&SiteID=4&SectionMax=50&DirectoryType=6,https://www.jpschools.org/site/default.aspx?pagetype=15&SiteID=9&DirectoryType=6&SectionMax=50..." v-model="input1"></textarea>
 		</label>
 		<!-- <label>

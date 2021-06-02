@@ -12,7 +12,6 @@
 		{% csrf_token %}
 		<label>
 			<p>Links separated by comma(,). No slash at the end. First link has www</p>
-			<!-- <input type="text" name="site" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." /> -->
 			<textarea name="site" rows="3" cols="80" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." v-model="input1"></textarea>
 		</label>
 		<label>
@@ -34,14 +33,6 @@
 		<label>
 			<p>Unique id or class for page navigation(tier 2, tier 3, tier 4). If this is the same as the level 2 from main nav leave empty</p>
 			<input type="text" list="page-nav" name="page_nav" placeholder="Empty" />
-		</label>
-		<label>
-			<p>Unique id or class for first column of content</p>
-			<input type="text" list="column1" name="col1" v-model="input9" />
-		</label>
-		<label>
-			<p>Unique id or class for second column of content, if there is any else leave empty</p>
-			<input type="text" list="column2" name="col2" placeholder="Empty" />
 		</label>
 		<label>
 			<p>Unique id or class for calendar</p>
@@ -80,14 +71,6 @@
 			<option>id=quicklinks</option>
 		</datalist>
 
-		<datalist id="column1">
-			<option>class_=col-xs-12</option>
-		</datalist>
-
-		<datalist id="column2">
-			<option>class_=col-xs-12 col-md-3</option>
-		</datalist>
-
 		<datalist id="calendar">
 			<option>id=calendar</option>
 		</datalist>
@@ -100,7 +83,7 @@
 			<option>id=news-list</option>
 		</datalist> -->
 
-		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input6.length < 1 || input7.length < 1 || input8.length < 1 || input9.length < 1">Search</button>
+		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input6.length < 1 || input7.length < 1 || input8.length < 1">Search</button>
 	</form>
 </div>
 
