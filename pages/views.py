@@ -765,7 +765,7 @@ def results_blackboard_view(request):
 
 			csv_report.writerow(['School name', school_name])
 
-			with open(f'static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8'') as csv_main:
+			with open(f'static/files/{mainfolder}/{school_name}.csv', 'w', encoding='utf-8') as csv_main:
 				csv_writer = csv.writer(csv_main)
 				csv_writer.writerow(['Link to page', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Column Count', 'Column 1', 'Column 2', 'Column 3', 'Column 4', 'Meta title', 'Meta keywords', 'Meta description'])
 
