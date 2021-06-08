@@ -1175,7 +1175,7 @@ def results_schoolpointe_view(request):
 			list_items = sitemap.select('ul > li')
 
 			if footer_nav != []:
-				list_items.extends(footer_nav)
+				list_items.extend(footer_nav)
 
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'
 			csv_report.writerow(['School name', school_name])
