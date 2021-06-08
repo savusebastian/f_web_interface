@@ -24,6 +24,10 @@
 			<input type="text" list="main-nav" name="main_nav" placeholder="Empty" v-model="input3" />
 		</label>
 		<label>
+			<p>Unique id or class for footer navigation</p>
+			<input type="text" list="footer-nav" name="footer_nav" placeholder="Empty" />
+		</label>
+		<label>
 			<p>Unique id or class for main content</p>
 			<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" v-model="input4" />
 		</label>
@@ -56,6 +60,10 @@
 			<option>id=mobileNavs</option>
 			<option>id=mobileMenu</option>
 			<option>id=main-navbar</option>
+		</datalist>
+
+		<datalist id="footer-nav">
+			<option>class_=footer-nav</option>
 		</datalist>
 
 		<!-- <datalist id="list-items">
