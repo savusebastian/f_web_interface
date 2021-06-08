@@ -1129,11 +1129,12 @@ def results_schoolpointe_view(request):
 	post_sitemap = request.POST.get('main_nav')
 	post_school = request.POST.get('school_title')
 	post_main_content = request.POST.get('main_content')
+	post_footer_nav = request.POST.get('footer_nav')
 	# post_page_nav = request.POST.get('page_nav')
 	post_calendar = request.POST.get('calendar')
 	post_staff_dir = request.POST.get('staff_dir')
 	post_news = request.POST.get('news')
-	print('>>', post_sites, post_sitemap, post_school, post_main_content, post_calendar, post_staff_dir, post_news)
+	print('>>', post_sites, post_sitemap, post_school, post_main_content, post_footer_nav, post_calendar, post_staff_dir, post_news)
 
 	# Process inputs
 	all_sites = post_sites.split(',')
@@ -1166,7 +1167,16 @@ def results_schoolpointe_view(request):
 			else:
 				sitemap = soup.find(id=post_sitemap.split('=')[1])
 
+			if len(post_footer_nav) > 0 and len(post_footer_nav.split('=')[0]) > 3:
+				footer_nav = soup.find(class_=post_footer_nav.split('=')[1]).select('ul > li')
+			elif len(post_footer_nav) > 0 and len(post_footer_nav.split('=')[0]) < 3:
+				footer_nav = soup.find(id=post_footer_nav.split('=')[1]).select('ul > li')
+
 			list_items = sitemap.select('ul > li')
+
+			if footer_nav != []:
+				list_items.extends(footer_nav)
+
 			school_name = f'{split_dot[1]}_{schools[s - 1]}'
 			csv_report.writerow(['School name', school_name])
 
