@@ -141,7 +141,10 @@ def results_custom_view(request):
 						image.attrs.clear()
 						image['alt'] = 'alt-text'
 
-					image['src'] = src
+					if src[0] != '/' and src[:4] != 'http':
+						image['src'] = f'/{src}'
+					else:
+						image['src'] = src
 
 				else:
 					image.attrs.clear()
@@ -160,7 +163,11 @@ def results_custom_view(request):
 				if anchor.get('href') != None and anchor.get('href') != '':
 					href = anchor['href']
 					anchor.attrs.clear()
-					anchor['href'] = href
+
+					if href[0] != '/' and href[:4] != 'http':
+						anchor['href'] = f'/{href}'
+					else:
+						anchor['href'] = href
 
 					if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
 					and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
@@ -571,7 +578,10 @@ def results_blackboard_view(request):
 						image.attrs.clear()
 						image['alt'] = 'alt-text'
 
-					image['src'] = src
+					if src[0] != '/' and src[:4] != 'http':
+						image['src'] = f'/{src}'
+					else:
+						image['src'] = src
 
 				else:
 					image.attrs.clear()
@@ -590,7 +600,11 @@ def results_blackboard_view(request):
 				if anchor.get('href') != None and anchor.get('href') != '':
 					href = anchor['href']
 					anchor.attrs.clear()
-					anchor['href'] = href
+
+					if href[0] != '/' and href[:4] != 'http':
+						anchor['href'] = f'/{href}'
+					else:
+						anchor['href'] = href
 
 					if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
 					and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
@@ -932,7 +946,10 @@ def results_schoolpointe_view(request):
 						image.attrs.clear()
 						image['alt'] = 'alt-text'
 
-					image['src'] = src
+					if src[0] != '/' and src[:4] != 'http':
+						image['src'] = f'/{src}'
+					else:
+						image['src'] = src
 
 				else:
 					image.attrs.clear()
@@ -951,7 +968,11 @@ def results_schoolpointe_view(request):
 				if anchor.get('href') != None and anchor.get('href') != '':
 					href = anchor['href']
 					anchor.attrs.clear()
-					anchor['href'] = href
+
+					if href[0] != '/' and href[:4] != 'http':
+						anchor['href'] = f'/{href}'
+					else:
+						anchor['href'] = href
 
 					if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
 					and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
@@ -1349,7 +1370,10 @@ def results_extra_links_view(request):
 						image.attrs.clear()
 						image['alt'] = 'alt-text'
 
-					image['src'] = src
+					if src[0] != '/' and src[:4] != 'http':
+						image['src'] = f'/{src}'
+					else:
+						image['src'] = src
 
 				else:
 					image.attrs.clear()
@@ -1368,7 +1392,11 @@ def results_extra_links_view(request):
 				if anchor.get('href') != None and anchor.get('href') != '':
 					href = anchor['href']
 					anchor.attrs.clear()
-					anchor['href'] = href
+
+					if href[0] != '/' and href[:4] != 'http':
+						anchor['href'] = f'/{href}'
+					else:
+						anchor['href'] = href
 
 					if anchor.get('href')[:4] != 'http' and anchor.get('href').find('.pdf') == -1 and anchor.get('href').find('.txt') == -1\
 					and anchor.get('href').find('.xls') == -1 and anchor.get('href').find('.xlsx') == -1\
