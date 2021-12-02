@@ -113,6 +113,16 @@ def results_custom_view(request):
 		return text.strip()
 
 
+	def clean_src(src):
+		split = src.split('/')[3:]
+		out = ''
+
+		for x in split:
+			out += f'/{x}'
+
+		return out
+
+
 	def get_column(col):
 		col_images = col.find_all('img')
 		col_anchors = col.find_all('a')
@@ -143,6 +153,8 @@ def results_custom_view(request):
 
 					if src[0] != '/' and src[:4] != 'http':
 						image['src'] = f'/{src}'
+					elif src[:4] == 'http':
+						image['src'] = clean_src(src)
 					else:
 						image['src'] = src
 
@@ -203,7 +215,8 @@ def results_custom_view(request):
 
 		# if web_page != '#':
 		try:
-			web_link = requests.get(web_page, timeout=5).content
+			headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0'}
+			web_link = requests.get(web_page, headers=headers, timeout=5).content
 			web_soup = BeautifulSoup(web_link, 'html.parser')
 
 			if web_soup.find_all('meta', attrs={'name': 'title'}) != []:
@@ -550,6 +563,16 @@ def results_blackboard_view(request):
 		return text.strip()
 
 
+	def clean_src(src):
+		split = src.split('/')[3:]
+		out = ''
+
+		for x in split:
+			out += f'/{x}'
+
+		return out
+
+
 	def get_column(col):
 		col_images = col.find_all('img')
 		col_anchors = col.find_all('a')
@@ -580,6 +603,8 @@ def results_blackboard_view(request):
 
 					if src[0] != '/' and src[:4] != 'http':
 						image['src'] = f'/{src}'
+					elif src[:4] == 'http':
+						image['src'] = clean_src(src)
 					else:
 						image['src'] = src
 
@@ -918,6 +943,16 @@ def results_schoolpointe_view(request):
 		return text.strip()
 
 
+	def clean_src(src):
+		split = src.split('/')[3:]
+		out = ''
+
+		for x in split:
+			out += f'/{x}'
+
+		return out
+
+
 	def get_column(col):
 		col_images = col.find_all('img')
 		col_anchors = col.find_all('a')
@@ -948,6 +983,8 @@ def results_schoolpointe_view(request):
 
 					if src[0] != '/' and src[:4] != 'http':
 						image['src'] = f'/{src}'
+					elif src[:4] == 'http':
+						image['src'] = clean_src(src)
 					else:
 						image['src'] = src
 
@@ -1342,6 +1379,16 @@ def results_extra_links_view(request):
 		return text.strip()
 
 
+	def clean_src(src):
+		split = src.split('/')[3:]
+		out = ''
+
+		for x in split:
+			out += f'/{x}'
+
+		return out
+
+
 	def get_column(col):
 		col_images = col.find_all('img')
 		col_anchors = col.find_all('a')
@@ -1372,6 +1419,8 @@ def results_extra_links_view(request):
 
 					if src[0] != '/' and src[:4] != 'http':
 						image['src'] = f'/{src}'
+					elif src[:4] == 'http':
+						image['src'] = clean_src(src)
 					else:
 						image['src'] = src
 
