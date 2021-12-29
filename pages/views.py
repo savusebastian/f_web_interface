@@ -186,6 +186,8 @@ def results_custom_view(request):
 					and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
 					and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
 						anchor.string = f'INTERNAL LINK {anchor.string}'
+				else:
+					anchor.attrs.clear()
 
 			except:
 				pass
@@ -636,6 +638,8 @@ def results_blackboard_view(request):
 					and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
 					and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
 						anchor.string = f'INTERNAL LINK {anchor.string}'
+				else:
+					anchor.attrs.clear()
 
 			except:
 				pass
@@ -1016,6 +1020,8 @@ def results_schoolpointe_view(request):
 					and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
 					and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
 						anchor.string = f'INTERNAL LINK {anchor.string}'
+				else:
+					anchor.attrs.clear()
 
 			except:
 				pass
@@ -1452,6 +1458,8 @@ def results_extra_links_view(request):
 					and anchor.get('href').find('.doc') == -1 and anchor.get('href').find('.docx') == -1\
 					and anchor.get('href').find('.ppt') == -1 and anchor.get('href').find('.pptx') == -1:
 						anchor.string = f'INTERNAL LINK {anchor.string}'
+				else:
+					anchor.attrs.clear()
 
 			except:
 				pass
