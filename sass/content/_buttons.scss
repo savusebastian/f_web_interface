@@ -1,24 +1,21 @@
 // Buttons
 // ==============================
 button {
-	margin: 0 0 20px;
+	margin: 0;
 	border: 0;
 	border-radius: 4px;
-	background: $m4;
-	padding: 10px;
-	width: 100%;
-	max-width: 150px;
+	background-color: $m4;
+	padding: 8px 30px;
 	color: $s0;
-	cursor: pointer;
 
 	&:hover, &:focus {
-		background: $m1;
+		background-color: $m1;
 		color: $sf;
 	}
 
 	&:disabled {
-		background: $m2;
+		background-color: $m2;
 		color: $sf;
-		cursor: default;
+		cursor: not-allowed;
 	}
 }

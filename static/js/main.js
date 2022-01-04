@@ -1,27 +1,22 @@
-$(document).ready(function(){
-	$('button').on('click', function(){
-		$('.side-nav, .main-content, .side-content').hide();
-		$('.loading-element').show();
-	});
-});
+function main() {
+	const form = document.querySelector('form');
+	const side_nav = document.querySelector('.side-nav');
+	const main_content = document.querySelector('.main-content');
+	const side_content = document.querySelector('.side-content');
+	const loading_element = document.querySelector('.loading-element');
+	const list_inputs = document.querySelectorAll('input[required]', 'textarea[required]');
 
+	if(form) {
+		form.addEventListener('submit', function(){
+			side_nav.style.display = 'none';
+			main_content.style.display = 'none';
+			loading_element.style.display = 'block';
 
-const VueApp = {
-	delimiters: ['${', '}'],
-	data() {
-		return {
-			searchInput: '',
-			classInput: '',
-			classInput2: '',
-			input1: '',
-			input2: 'district,',
-			input3: '',
-			input4: '',
-			input6: '',
-			input7: '',
-			input8: '',
-		}
+			if(side_content) {
+				side_content.style.display = 'none';
+			}
+		});
 	}
 }
 
-Vue.createApp(VueApp).mount('#app');
+main();

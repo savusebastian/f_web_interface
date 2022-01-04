@@ -12,7 +12,7 @@ html {
 }
 @media (prefers-color-scheme: dark) {
   html {
-    background: #000000;
+    background-color: black;
     color: #cccccc;
   }
 }
@@ -20,7 +20,7 @@ html {
 body {
   display: flex;
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
 }
 
@@ -39,21 +39,19 @@ picture {
 }
 
 .side-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 240px;
-  padding: 20px 15px;
-  background: #cccccc;
+  height: 100%;
+  flex-basis: 250px;
+  padding: 20px 10px;
+  background-color: #cccccc;
+  overflow-y: auto;
 }
 .side-nav nav:not(:last-of-type) {
   margin: 0 0 20px;
-  border-bottom: 1px solid #808080;
+  border-bottom: 1px solid gray;
   padding: 0 0 20px;
 }
 .side-nav li.active {
-  margin: 0 0 10px;
+  margin-bottom: 10px;
   padding: 0 10px;
   font-size: 20px;
 }
@@ -63,55 +61,50 @@ picture {
   text-decoration: none;
 }
 .side-nav a.active {
-  background: #f9e3a2;
+  background-color: #f9e29f;
 }
 .side-nav a:hover, .side-nav a:focus {
-  background: #132743;
-  color: #ffffff;
+  background-color: #0074cc;
+  color: white;
 }
 @media (prefers-color-scheme: dark) {
   .side-nav {
-    background: #1a1a1a;
+    background-color: #1a1a1a;
   }
   .side-nav a {
     color: #999999;
   }
   .side-nav a.active {
-    color: #000000;
+    color: black;
   }
   .side-nav a:hover, .side-nav a:focus {
-    background: #132743;
-    color: #ffffff;
-  }
-}
-@media (max-width: 1400px) {
-  .side-nav {
-    width: 200px;
+    background-color: #0074cc;
+    color: white;
   }
 }
 
 main {
   display: flex;
-  width: 100%;
-  padding: 20px 0 20px 240px;
+  flex-basis: calc(100% - 250px);
+  padding: 20px 20px 0;
+  overflow-y: auto;
 }
 main .main-content {
-  flex-grow: 1;
-  padding: 0 40px;
+  flex-basis: calc(100% - 270px);
 }
 main .side-content {
-  width: 340px;
-  padding: 0 40px;
+  flex-basis: 270px;
+  padding-left: 20px;
 }
 main .side-content .active {
   border: 0;
-  background: #132743;
-  color: #ffffff;
+  background-color: #0074cc;
+  color: white;
 }
 main .side-content li {
   border: 1px solid #cccccc;
   border-top: 0;
-  padding: 10px 20px;
+  padding: 10px;
 }
 main .side-content li:first-of-type {
   border-top-left-radius: 8px;
@@ -129,8 +122,8 @@ main .loading-element {
   transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
-  border: 6px solid #ff6187;
-  border-top: 6px solid #db1d4b;
+  border: 6px solid #e46784;
+  border-top: 6px solid #d92653;
   border-radius: 100%;
   animation: loading 1s infinite linear;
 }
@@ -148,50 +141,31 @@ main .loading-element {
 @media (prefers-color-scheme: dark) {
   main .side-content .active {
     border: 0;
-    background: #f9e3a2;
-    color: #000000;
+    background-color: #f9e29f;
+    color: black;
   }
   main .side-content li {
-    background: #1a1a1a;
-    border: 1px solid #000000;
-  }
-}
-@media (max-width: 1400px) {
-  main {
-    padding: 20px 0 20px 200px;
-  }
-  main .main-content {
-    padding: 0 20px;
-  }
-  main .side-content {
-    padding: 0 20px;
-  }
-}
-@media (max-width: 900px) {
-  main {
-    flex-direction: column;
+    background-color: #1a1a1a;
+    border-color: black;
   }
 }
 
 button {
-  margin: 0 0 20px;
+  margin: 0;
   border: 0;
   border-radius: 4px;
-  background: #f9e3a2;
-  padding: 10px;
-  width: 100%;
-  max-width: 150px;
-  color: #000000;
-  cursor: pointer;
+  background-color: #f9e29f;
+  padding: 8px 30px;
+  color: black;
 }
 button:hover, button:focus {
-  background: #132743;
-  color: #ffffff;
+  background-color: #0074cc;
+  color: white;
 }
 button:disabled {
-  background: #db1d4b;
-  color: #ffffff;
-  cursor: default;
+  background-color: #d92653;
+  color: white;
+  cursor: not-allowed;
 }
 
 h1 {
@@ -227,7 +201,7 @@ p:last-child {
 
 a {
   display: block;
-  color: #000000;
+  color: black;
 }
 a:hover, a:focus {
   text-decoration: none;
@@ -241,36 +215,31 @@ a:hover, a:focus {
 form {
   display: flex;
   flex-direction: column;
-}
-form section {
-  margin-bottom: 20px;
-}
-form section label {
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-form section input {
-  width: auto;
-  max-width: none;
-  margin: 0 10px 0 0;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 form label {
+  width: 100%;
   margin-bottom: 20px;
 }
 form p {
-  margin: 0 0 10px;
+  margin-bottom: 10px;
+}
+form span {
+  margin-left: 10px;
 }
 form input {
   width: 100%;
   border: 0;
   border-radius: 4px;
   padding: 10px 5px;
-  background: #cccccc;
+  background-color: #cccccc;
   font-size: 1rem;
 }
 form input[type=checkbox] {
-  cursor: pointer;
+  width: auto;
+  margin: 0;
 }
 form textarea {
   resize: vertical;
@@ -278,7 +247,7 @@ form textarea {
   border: 0;
   border-radius: 4px;
   padding: 10px 5px;
-  background: #cccccc;
+  background-color: #cccccc;
   font-family: inherit;
   font-size: 1rem;
 }

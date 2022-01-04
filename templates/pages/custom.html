@@ -12,40 +12,49 @@
 		{% csrf_token %}
 		<label>
 			<p>Links separated by comma(,). No slash at the end. First link has www</p>
-			<textarea name="site" rows="3" cols="80" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." v-model="input1"></textarea>
+			<textarea name="site" rows="3" cols="80" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." required></textarea>
 		</label>
+
 		<label>
 			<p>Unique id or class for main navigation</p>
 			<input type="text" list="main-nav" name="main_nav" placeholder="Empty" />
 		</label>
+
 		<label>
 			<p>A way to identify a list with its children</p>
-			<input type="text" list="list-items" name="list_items" placeholder="If main nav is empty select first option" v-model="input6" />
+			<input type="text" list="list-items" name="list_items" placeholder="If main nav is empty select first option" required />
 		</label>
+
 		<label>
 			<p>Unique id or class for School title</p>
-			<input type="text" list="school-title" name="school_title" v-model="input7" />
+			<input type="text" list="school-title" name="school_title" required />
 		</label>
+
 		<label>
 			<p>Unique id or class for main content</p>
-			<input type="text" list="main-content" name="main_content" v-model="input8" />
+			<input type="text" list="main-content" name="main_content" required />
 		</label>
+
 		<label>
 			<p>Unique id or class for page navigation(tier 2, tier 3, tier 4). If this is the same as the level 2 from main nav leave empty</p>
 			<input type="text" list="page-nav" name="page_nav" placeholder="Empty" />
 		</label>
+
 		<label>
 			<p>Unique id or class for calendar</p>
 			<input type="text" list="calendar" name="calendar" placeholder="Empty" />
 		</label>
+
 		<label>
 			<p>Unique id or class for staff-directory</p>
 			<input type="text" list="staff-dir" name="staff_dir" placeholder="Empty" />
 		</label>
+
 		<label>
 			<p>Unique id or class for news item</p>
 			<input type="text" list="news" name="news" placeholder="Empty" />
 		</label>
+
 		<!-- <label>
 			<p>Additional links that need to be scraped for content. Links separated by comma(,). No slash at the end</p>
 			<textarea name="extra" rows="6" cols="80" placeholder="Empty"></textarea>
@@ -83,7 +92,7 @@
 			<option>id=news-list</option>
 		</datalist> -->
 
-		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input6.length < 1 || input7.length < 1 || input8.length < 1">Search</button>
+		<button type="submit" name="submit">Search</button>
 	</form>
 </div>
 

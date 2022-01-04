@@ -18,11 +18,11 @@ def home_view(request):
 def results_view(request):
 	def check_by_class(web_page, class_name, search_content):
 		try:
-			web_link = requests.get(web_page, timeout=10)
-			web_soup = BeautifulSoup(web_link.content, 'html.parser')
+			web_link = requests.get(web_page, timeout=10).content
+			web_soup = BeautifulSoup(web_link, 'html.parser')
 
 			if search_content != None:
-				result = web_soup.find(class_='fsPageContent').find(class_=class_name)
+				result = web_soup.find(id='fsPageContent').find(class_=class_name)
 			else:
 				result = web_soup.find(class_=class_name)
 
@@ -36,15 +36,15 @@ def results_view(request):
 	class_name = request.POST.get('by_class')
 	search_content = request.POST.get('search_content')
 	print('>>', url, '>>', class_name, '>>', search_content)
-	page = requests.get(url)
-	soup = BeautifulSoup(page.content, 'html.parser')
+	page = requests.get(f'{url}fs/pages/sitemap.xml').content
+	soup = BeautifulSoup(page, 'html.parser')
 	urls = soup.find_all('loc')
 	links = []
 	counter = 0
 
 	for link in urls:
 		if link.get_text()[0] != 'h':
-			news = check_by_class('https:' + link.get_text(), class_name, search_content)
+			news = check_by_class(f'https:{link.get_text()}', class_name, search_content)
 		else:
 			news = check_by_class(link.get_text(), class_name, search_content)
 

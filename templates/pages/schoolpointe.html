@@ -12,41 +12,49 @@
 		{% csrf_token %}
 		<label>
 			<p>Links separated by comma(,). No slash at the end. First link has www</p>
-			<!-- <input type="text" name="site" v-model="input1" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." /> -->
-			<textarea name="site" rows="3" cols="80" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." v-model="input1"></textarea>
+			<textarea name="site" rows="3" cols="80" placeholder="https://www.ecschools.net,https://www.ecschools.net/2/home..." required></textarea>
 		</label>
+
 		<label>
 			<p>Add extra end for schools - School high school -> shs</p>
-			<textarea name="school_title" rows="3" cols="80" placeholder="district,shs,sms,ses..." v-model="input2"></textarea>
+			<textarea name="school_title" rows="3" cols="80" placeholder="district,shs,sms,ses..." required>district,</textarea>
 		</label>
+
 		<label>
 			<p>Unique id or class for mobile navigation (since it has all links)</p>
-			<input type="text" list="main-nav" name="main_nav" placeholder="Empty" v-model="input3" />
+			<input type="text" list="main-nav" name="main_nav" placeholder="Empty" />
 		</label>
+
 		<label>
 			<p>Unique id or class for footer navigation</p>
 			<input type="text" list="footer-nav" name="footer_nav" placeholder="Empty" />
 		</label>
+
 		<label>
 			<p>Unique id or class for main content</p>
-			<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" v-model="input4" />
+			<input type="text" list="main-content" name="main_content" placeholder="class_=body-content-container" required />
 		</label>
+
 		<!-- <label>
 			<p>Unique id or class for page navigation(tier 2, tier 3, tier 4). If this is the same as the level 2 from main nav leave empty</p>
 			<input type="text" list="page-nav" name="page_nav" placeholder="Empty" />
 		</label> -->
+
 		<label>
 			<p>Unique id or class for calendar</p>
 			<input type="text" list="calendar" name="calendar" value="id=calendar" placeholder="Empty" />
 		</label>
+
 		<label>
 			<p>Unique id or class for staff-directory</p>
 			<input type="text" list="staff-dir" name="staff_dir" value="class_=staff-directory" placeholder="Empty" />
 		</label>
+
 		<label>
 			<p>Unique id or class for news item</p>
 			<input type="text" list="news" name="news" value="id=news-list" placeholder="Empty" />
 		</label>
+
 		<!-- <label>
 			<p>Additional links that need to be scraped for content. Links separated by comma(,). No slash at the end</p>
 			<textarea name="extra" rows="6" cols="80" placeholder="Empty"></textarea>
@@ -98,7 +106,7 @@
 			<option>id=news-list</option>
 		</datalist>
 
-		<button type="submit" name="submit" v-bind:disabled="input1.length < 1 || input2.length < 1 || input3.length < 1 || input4.length < 1">Search</button>
+		<button type="submit" name="submit">Search</button>
 	</form>
 </div>
 

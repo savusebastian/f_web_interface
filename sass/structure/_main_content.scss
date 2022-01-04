@@ -1,27 +1,27 @@
 main {
 	display: flex;
-	width: 100%;
-	padding: 20px 0 20px 240px;
+	flex-basis: calc(100% - 250px);
+	padding: 20px 20px 0;
+	overflow-y: auto;
 
 	.main-content {
-		flex-grow: 1;
-		padding: 0 40px;
+		flex-basis: calc(100% - 270px);
 	}
 
 	.side-content {
-		width: 340px;
-		padding: 0 40px;
+		flex-basis: 270px;
+		padding-left: 20px;
 
 		.active {
 			border: 0;
-			background: $m1;
+			background-color: $m1;
 			color: $sf;
 		}
 
 		li {
 			border: 1px solid $s8;
 			border-top: 0;
-			padding: 10px 20px;
+			padding: 10px;
 
 			&:first-of-type {
 				border-top-left-radius: 8px;
@@ -67,34 +67,14 @@ main {
 		.side-content {
 			.active {
 				border: 0;
-				background: $m4;
+				background-color: $m4;
 				color: $s0;
 			}
 
 			li {
-				background: $s1;
-				border: 1px solid $s0;
-
-				// &:first-of-type {
-				// 	border: 1px solid $s0;
-				// }
+				background-color: $s1;
+				border-color: $s0;
 			}
 		}
-	}
-
-	@media(max-width: 1400px) {
-		padding: 20px 0 20px 200px;
-
-		.main-content {
-			padding: 0 20px;
-		}
-
-		.side-content {
-			padding: 0 20px;
-		}
-	}
-
-	@media(max-width: 900px) {
-		flex-direction: column;
 	}
 }

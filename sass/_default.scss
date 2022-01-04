@@ -16,7 +16,7 @@
 // outline: ;
 // border: ;
 // padding: ;
-// background: ;
+// background-color: ;
 //
 // color: ; /* Text */
 // font: ;
@@ -35,7 +35,7 @@ html {
 	font-family: $font-family-1;
 
 	@media (prefers-color-scheme: dark) {
-		background: $s0;
+		background-color: $s0;
 		color: $s8;
 	}
 }
@@ -43,7 +43,7 @@ html {
 body {
 	display: flex;
 	position: relative;
-	min-height: 100vh;
+	height: 100vh;
 	margin: 0;
 }
 
