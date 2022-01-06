@@ -5,23 +5,19 @@ main {
 	overflow-y: auto;
 
 	.main-content {
-		flex-basis: calc(100% - 270px);
+		flex-basis: 100%;
 	}
 
 	.side-content {
 		flex-basis: 270px;
+		flex-shrink: 0;
 		padding-left: 20px;
 
-		.active {
-			border: 0;
-			background-color: $m1;
-			color: $sf;
-		}
-
 		li {
-			border: 1px solid $s8;
-			border-top: 0;
-			padding: 10px;
+			border-left: 1px solid $s8;
+			border-right: 1px solid $s8;
+			border-bottom: 1px solid $s8;
+			padding: 10px 20px;
 
 			&:first-of-type {
 				border-top-left-radius: 8px;
@@ -32,6 +28,14 @@ main {
 				border-bottom-left-radius: 8px;
 				border-bottom-right-radius: 8px;
 			}
+		}
+
+		.active {
+			border-bottom: 0;
+			border-left-color: $m1;
+			border-right-color: $m1;
+			background-color: $m1;
+			color: $sf;
 		}
 	}
 
@@ -65,15 +69,18 @@ main {
 
 	@media(prefers-color-scheme: dark) {
 		.side-content {
-			.active {
-				border: 0;
-				background-color: $m4;
-				color: $s0;
+			li {
+				border-left-color: $s0;
+				border-right-color: $s0;
+				border-bottom-color: $s0;
+				background-color: $s1;
 			}
 
-			li {
-				background-color: $s1;
-				border-color: $s0;
+			.active {
+				border-left-color: $s0;
+				border-right-color: $s0;
+				background-color: $m4;
+				color: $s0;
 			}
 		}
 	}
