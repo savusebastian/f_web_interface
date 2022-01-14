@@ -6,9 +6,9 @@
 	overflow-y: auto;
 
 	nav:not(:last-of-type) {
-		margin: 0 0 20px;
+		margin-bottom: 20px;
 		border-bottom: 1px solid $s5;
-		padding: 0 0 20px;
+		padding-bottom: 20px;
 	}
 
 	li.active {

@@ -1,6 +1,6 @@
 // Buttons
 // ==============================
-button {
+button[type="submit"] {
 	margin: 0;
 	border: 0;
 	border-radius: 4px;
@@ -11,11 +11,5 @@ button {
 	&:hover, &:focus {
 		background-color: $m1;
 		color: $sf;
-	}
-
-	&:disabled {
-		background-color: $m2;
-		color: $sf;
-		cursor: not-allowed;
 	}
 }

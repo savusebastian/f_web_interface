@@ -30,14 +30,6 @@ body {
   padding: 0;
 }
 
-figure {
-  margin: 0;
-}
-
-picture {
-  display: flex;
-}
-
 main {
   display: flex;
   flex-basis: calc(100% - 250px);
@@ -120,9 +112,9 @@ main .loading-element {
   overflow-y: auto;
 }
 .side-nav nav:not(:last-of-type) {
-  margin: 0 0 20px;
+  margin-bottom: 20px;
   border-bottom: 1px solid gray;
-  padding: 0 0 20px;
+  padding-bottom: 20px;
 }
 .side-nav li.active {
   margin-bottom: 10px;
@@ -157,7 +149,7 @@ main .loading-element {
   }
 }
 
-button {
+button[type=submit] {
   margin: 0;
   border: 0;
   border-radius: 4px;
@@ -165,14 +157,9 @@ button {
   padding: 8px 30px;
   color: black;
 }
-button:hover, button:focus {
+button[type=submit]:hover, button[type=submit]:focus {
   background-color: #0074cc;
   color: white;
-}
-button:disabled {
-  background-color: #d92653;
-  color: white;
-  cursor: not-allowed;
 }
 
 h1 {

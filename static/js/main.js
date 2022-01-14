@@ -4,7 +4,6 @@ function main() {
 	const main_content = document.querySelector('.main-content');
 	const side_content = document.querySelector('.side-content');
 	const loading_element = document.querySelector('.loading-element');
-	const list_inputs = document.querySelectorAll('input[required]', 'textarea[required]');
 
 	if(form) {
 		form.addEventListener('submit', function(){
