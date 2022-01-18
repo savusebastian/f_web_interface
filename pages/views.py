@@ -43,13 +43,15 @@ def results_view(request):
 	counter = 0
 
 	for link in urls:
-		if link.get_text()[0] != 'h':
-			news = check_by_class(f'https:{link.get_text()}', class_name, search_content)
+		text = link.get_text()
+
+		if text[0] != 'h':
+			news = check_by_class(f'https:{text}', class_name, search_content)
 		else:
-			news = check_by_class(link.get_text(), class_name, search_content)
+			news = check_by_class(text, class_name, search_content)
 
 		if news:
-			links.append(link.get_text())
+			links.append(text)
 			counter += 1
 
 	context = {
