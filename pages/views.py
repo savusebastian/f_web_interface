@@ -55,6 +55,7 @@ def results_view(request):
 			counter += 1
 
 	context = {
+		'url': url,
 		'links': links,
 		'class_name': class_name,
 		'counter': counter
