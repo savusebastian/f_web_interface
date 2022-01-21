@@ -18,7 +18,7 @@ def home_view(request):
 def results_view(request):
 	def check_by_class(web_page, class_name, search_content):
 		try:
-			web_link = requests.get(web_page, timeout=10).content
+			web_link = requests.get(web_page, timeout=5).content
 			web_soup = BeautifulSoup(web_link, 'html.parser')
 
 			if search_content != None:
