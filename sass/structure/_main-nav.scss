@@ -22,10 +22,6 @@
 		padding: 10px;
 		text-decoration: none;
 
-		&.active {
-			background-color: $m4;
-		}
-
 		&:hover, &:focus {
 			background-color: $m1;
 			color: $sf;
@@ -37,15 +33,6 @@
 
 		a {
 			color: $s6;
-
-			&.active {
-				color: $s0;
-			}
-
-			&:hover, &:focus {
-				background-color: $m1;
-				color: $sf;
-			}
 		}
 	}
 }

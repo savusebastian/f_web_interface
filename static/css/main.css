@@ -8,7 +8,7 @@
 }
 
 html {
-  font-family: "Noto Sans", sans-serif;
+  font-family: sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   html {
@@ -73,8 +73,8 @@ main .loading-element {
   transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
-  border: 6px solid #e46784;
-  border-top: 6px solid #d92653;
+  border: 6px solid #0074cc;
+  border-top: 6px solid #005799;
   border-radius: 100%;
   animation: loading 1s infinite linear;
 }
@@ -99,8 +99,8 @@ main .loading-element {
   main .side-content .active {
     border-left-color: black;
     border-right-color: black;
-    background-color: #f9e29f;
-    color: black;
+    background-color: #0074cc;
+    color: white;
   }
 }
 
@@ -126,9 +126,6 @@ main .loading-element {
   padding: 10px;
   text-decoration: none;
 }
-.side-nav a.active {
-  background-color: #f9e29f;
-}
 .side-nav a:hover, .side-nav a:focus {
   background-color: #0074cc;
   color: white;
@@ -140,26 +137,18 @@ main .loading-element {
   .side-nav a {
     color: #999999;
   }
-  .side-nav a.active {
-    color: black;
-  }
-  .side-nav a:hover, .side-nav a:focus {
-    background-color: #0074cc;
-    color: white;
-  }
 }
 
 button[type=submit] {
   margin: 0;
   border: 0;
   border-radius: 4px;
-  background-color: #f9e29f;
+  background-color: #0074cc;
   padding: 8px 30px;
-  color: black;
+  color: white;
 }
 button[type=submit]:hover, button[type=submit]:focus {
-  background-color: #0074cc;
-  color: white;
+  background-color: #005799;
 }
 
 h1 {

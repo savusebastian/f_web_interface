@@ -4,12 +4,11 @@ button[type="submit"] {
 	margin: 0;
 	border: 0;
 	border-radius: 4px;
-	background-color: $m4;
+	background-color: $m1;
 	padding: 8px 30px;
-	color: $s0;
+	color: $sf;
 
 	&:hover, &:focus {
-		background-color: $m1;
-		color: $sf;
+		background-color: $m2;
 	}
 }

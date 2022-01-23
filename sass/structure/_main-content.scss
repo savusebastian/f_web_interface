@@ -47,7 +47,7 @@ main {
 		transform: translate(-50%, -50%);
 		width: 50px;
 		height: 50px;
-		border: 6px solid $m3;
+		border: 6px solid $m1;
 		border-top: 6px solid $m2;
 		border-radius: 100%;
 		animation: loading 1s infinite linear;
@@ -79,8 +79,8 @@ main {
 			.active {
 				border-left-color: $s0;
 				border-right-color: $s0;
-				background-color: $m4;
-				color: $s0;
+				background-color: $m1;
+				color: $sf;
 			}
 		}
 	}

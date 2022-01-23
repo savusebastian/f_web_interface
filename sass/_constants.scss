@@ -6,8 +6,8 @@
 
 // Font Types
 // ==============================
-$font-family-1: 'Noto Sans', sans-serif;
-// $font-family-2: 'Open Sans', serif;
+$font-family-1: sans-serif;
+// $font-family-2: serif;
 
 $font-icon: 'icomoon';
 
@@ -16,11 +16,9 @@ $font-icon: 'icomoon';
 // ==============================
 // Main
 $m1: hsl(206, 100%, 40%);
-$m2: hsl(345, 70%, 50%);
-$m3: hsl(346, 70%, 65%);
-$m4: hsl(45, 88%, 80%);
+$m2: hsl(206, 100%, 30%);
 
-// Shades
+// Gray shades
 $s0: hsl(0, 0%, 0%);
 $s1: hsl(0, 0%, 10%);
 $s2: hsl(0, 0%, 20%);
