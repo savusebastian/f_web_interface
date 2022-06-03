@@ -1,11 +1,18 @@
+@use '../constants';
+
 main {
 	display: flex;
 	flex-basis: calc(100% - 250px);
+	flex-grow: 1;
 	padding: 20px 20px 0;
 	overflow-y: auto;
 
 	.main-content {
 		flex-basis: 100%;
+
+		&.hidden {
+			display: none;
+		}
 	}
 
 	.side-content {
@@ -14,9 +21,9 @@ main {
 		padding-left: 20px;
 
 		li {
-			border-left: 1px solid $s8;
-			border-right: 1px solid $s8;
-			border-bottom: 1px solid $s8;
+			border-left: 1px solid constants.$s8;
+			border-right: 1px solid constants.$s8;
+			border-bottom: 1px solid constants.$s8;
 			padding: 10px 20px;
 
 			&:first-of-type {
@@ -32,34 +39,38 @@ main {
 
 		.active {
 			border-bottom: 0;
-			border-left-color: $m1;
-			border-right-color: $m1;
-			background-color: $m1;
-			color: $sf;
+			border-left-color: constants.$m1;
+			border-right-color: constants.$m1;
+			background-color: constants.$m1;
+			color: constants.$sf;
+		}
+
+		&.hidden {
+			display: none;
 		}
 	}
 
 	.loading-element {
-		display: none;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
 		width: 50px;
 		height: 50px;
-		border: 6px solid $m1;
-		border-top: 6px solid $m2;
+		border: 6px solid constants.$m1;
+		border-top: 6px solid constants.$m2;
 		border-radius: 100%;
 		animation: loading 1s infinite linear;
+
+		&.hidden {
+			display: none;
+		}
+	}
+
+	&.center {
+		align-items: center;
+		justify-content: center;
 	}
 
 	@keyframes loading {
 		0% {
 			transform: rotate(0deg);
-		}
-
-		50% {
-			transform: rotate(180deg);
 		}
 
 		100% {
@@ -70,17 +81,17 @@ main {
 	@media(prefers-color-scheme: dark) {
 		.side-content {
 			li {
-				border-left-color: $s0;
-				border-right-color: $s0;
-				border-bottom-color: $s0;
-				background-color: $s1;
+				border-left-color: constants.$s0;
+				border-right-color: constants.$s0;
+				border-bottom-color: constants.$s0;
+				background-color: constants.$s1;
 			}
 
 			.active {
-				border-left-color: $s0;
-				border-right-color: $s0;
-				background-color: $m1;
-				color: $sf;
+				border-left-color: constants.$s0;
+				border-right-color: constants.$s0;
+				background-color: constants.$m1;
+				color: constants.$sf;
 			}
 		}
 	}

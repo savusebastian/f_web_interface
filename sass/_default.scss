@@ -1,26 +1,4 @@
-// Css order
-// display: ; /* Where and how the box is placed */
-// position: ;
-// z-index: ;
-// float: ;
-// clear: ;
-//
-// visibility: ;/* Can the box be seen? */
-// opacity: ;
-//
-// height: ; /* Content dimensions and scrollbars */
-// width: ;
-// overflow: ;
-//
-// margin: ; /* Layers of the box model */
-// outline: ;
-// border: ;
-// padding: ;
-// background-color: ;
-//
-// color: ; /* Text */
-// font: ;
-// text: ;
+@use 'constants';
 
 * {
 	box-sizing: border-box;
@@ -32,11 +10,11 @@
 }
 
 html {
-	font-family: $font-family-1;
+	font-family: constants.$font-family-1;
 
 	@media(prefers-color-scheme: dark) {
-		background-color: $s0;
-		color: $s8;
+		background-color: constants.$s0;
+		color: constants.$s8;
 	}
 }
 

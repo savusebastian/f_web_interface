@@ -12,8 +12,8 @@ html {
 }
 @media (prefers-color-scheme: dark) {
   html {
-    background-color: black;
-    color: #cccccc;
+    background-color: hsl(0deg, 0%, 0%);
+    color: hsl(0deg, 0%, 80%);
   }
 }
 
@@ -33,11 +33,15 @@ body {
 main {
   display: flex;
   flex-basis: calc(100% - 250px);
+  flex-grow: 1;
   padding: 20px 20px 0;
   overflow-y: auto;
 }
 main .main-content {
   flex-basis: 100%;
+}
+main .main-content.hidden {
+  display: none;
 }
 main .side-content {
   flex-basis: 270px;
@@ -45,9 +49,9 @@ main .side-content {
   padding-left: 20px;
 }
 main .side-content li {
-  border-left: 1px solid #cccccc;
-  border-right: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid hsl(0deg, 0%, 80%);
+  border-right: 1px solid hsl(0deg, 0%, 80%);
+  border-bottom: 1px solid hsl(0deg, 0%, 80%);
   padding: 10px 20px;
 }
 main .side-content li:first-of-type {
@@ -60,30 +64,32 @@ main .side-content li:last-of-type {
 }
 main .side-content .active {
   border-bottom: 0;
-  border-left-color: #0074cc;
-  border-right-color: #0074cc;
-  background-color: #0074cc;
-  color: white;
+  border-left-color: hsl(206deg, 100%, 40%);
+  border-right-color: hsl(206deg, 100%, 40%);
+  background-color: hsl(206deg, 100%, 40%);
+  color: hsl(0deg, 0%, 100%);
+}
+main .side-content.hidden {
+  display: none;
 }
 main .loading-element {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
-  border: 6px solid #0074cc;
-  border-top: 6px solid #005799;
+  border: 6px solid hsl(206deg, 100%, 40%);
+  border-top: 6px solid hsl(206deg, 100%, 30%);
   border-radius: 100%;
   animation: loading 1s infinite linear;
+}
+main .loading-element.hidden {
+  display: none;
+}
+main.center {
+  align-items: center;
+  justify-content: center;
 }
 @keyframes loading {
   0% {
     transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
   }
   100% {
     transform: rotate(360deg);
@@ -91,16 +97,16 @@ main .loading-element {
 }
 @media (prefers-color-scheme: dark) {
   main .side-content li {
-    border-left-color: black;
-    border-right-color: black;
-    border-bottom-color: black;
-    background-color: #1a1a1a;
+    border-left-color: hsl(0deg, 0%, 0%);
+    border-right-color: hsl(0deg, 0%, 0%);
+    border-bottom-color: hsl(0deg, 0%, 0%);
+    background-color: hsl(0deg, 0%, 10%);
   }
   main .side-content .active {
-    border-left-color: black;
-    border-right-color: black;
-    background-color: #0074cc;
-    color: white;
+    border-left-color: hsl(0deg, 0%, 0%);
+    border-right-color: hsl(0deg, 0%, 0%);
+    background-color: hsl(206deg, 100%, 40%);
+    color: hsl(0deg, 0%, 100%);
   }
 }
 
@@ -108,12 +114,12 @@ main .loading-element {
   height: 100%;
   flex-basis: 250px;
   padding: 20px 10px;
-  background-color: #cccccc;
+  background-color: hsl(0deg, 0%, 80%);
   overflow-y: auto;
 }
 .side-nav nav:not(:last-of-type) {
   margin-bottom: 20px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid hsl(0deg, 0%, 50%);
   padding-bottom: 20px;
 }
 .side-nav li.active {
@@ -127,15 +133,18 @@ main .loading-element {
   text-decoration: none;
 }
 .side-nav a:hover, .side-nav a:focus {
-  background-color: #0074cc;
-  color: white;
+  background-color: hsl(206deg, 100%, 40%);
+  color: hsl(0deg, 0%, 100%);
+}
+.side-nav.hidden {
+  display: none;
 }
 @media (prefers-color-scheme: dark) {
   .side-nav {
-    background-color: #1a1a1a;
+    background-color: hsl(0deg, 0%, 10%);
   }
   .side-nav a {
-    color: #999999;
+    color: hsl(0deg, 0%, 60%);
   }
 }
 
@@ -143,12 +152,12 @@ button[type=submit] {
   margin: 0;
   border: 0;
   border-radius: 4px;
-  background-color: #0074cc;
+  background-color: hsl(206deg, 100%, 40%);
   padding: 8px 30px;
-  color: white;
+  color: hsl(0deg, 0%, 100%);
 }
 button[type=submit]:hover, button[type=submit]:focus {
-  background-color: #005799;
+  background-color: hsl(206deg, 100%, 30%);
 }
 
 h1 {
@@ -184,7 +193,7 @@ p:last-child {
 
 a {
   display: block;
-  color: black;
+  color: hsl(0deg, 0%, 0%);
 }
 a:hover, a:focus {
   text-decoration: none;
@@ -192,7 +201,7 @@ a:hover, a:focus {
 
 @media (prefers-color-scheme: dark) {
   h1, h2, h3, h4, h5, h6, a {
-    color: #cccccc;
+    color: hsl(0deg, 0%, 80%);
   }
 }
 form {
@@ -217,7 +226,7 @@ form input {
   border: 0;
   border-radius: 4px;
   padding: 10px 5px;
-  background-color: #cccccc;
+  background-color: hsl(0deg, 0%, 80%);
   font-size: 1rem;
 }
 form input[type=checkbox] {
@@ -230,7 +239,7 @@ form textarea {
   border: 0;
   border-radius: 4px;
   padding: 10px 5px;
-  background-color: #cccccc;
+  background-color: hsl(0deg, 0%, 80%);
   font-family: inherit;
   font-size: 1rem;
 }

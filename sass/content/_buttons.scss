@@ -1,14 +1,14 @@
-// Buttons
-// ==============================
+@use '../constants';
+
 button[type="submit"] {
 	margin: 0;
 	border: 0;
 	border-radius: 4px;
-	background-color: $m1;
+	background-color: constants.$m1;
 	padding: 8px 30px;
-	color: $sf;
+	color: constants.$sf;
 
 	&:hover, &:focus {
-		background-color: $m2;
+		background-color: constants.$m2;
 	}
 }

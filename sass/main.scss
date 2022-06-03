@@ -1,28 +1,24 @@
 // Basic
 // ==============================
-@import
-	'constants',
-	'default';
+@forward 'constants';
+@forward 'default';
 
 
 // Structure
 // ==============================
-@import
-	'structure/main-content',
-	'structure/main-nav';
+@forward 'structure/main-content';
+@forward 'structure/main-nav';
 
 
 // Content
 // ==============================
-@import
-	'content/buttons',
-	'content/html';
+@forward 'content/buttons';
+@forward 'content/html';
 
 
 // Modules
 // ==============================
-@import
-	'modules/forms';
+@forward 'modules/forms';
 
 
 // sass --watch Documents/python_scripts/f_web_interface/sass/main.scss Documents/python_scripts/f_web_interface/static/css/main.css

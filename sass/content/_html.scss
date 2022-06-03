@@ -1,3 +1,5 @@
+@use '../constants';
+
 // Font Includes
 // ================================
 // @font-face {
@@ -13,47 +15,47 @@
 // }
 
 
-// Default Heading Style
+// Headings
 // ================================
 h1 {
-	// color: $s0;
-	// font-size: $h1-size;
-	// line-height: $h1-line-height;
+	// color: constants.$s0;
+	// font-size: constants.$h1-size;
+	// line-height: constants.$h1-line-height;
 	margin: 0 0 40px;
 }
 
 h2 {
-	// color: $s0;
-	// font-size: $h2-size;
-	// line-height: $h2-line-height;
+	// color: constants.$s0;
+	// font-size: constants.$h2-size;
+	// line-height: constants.$h2-line-height;
 	margin: 0 0 20px;
 }
 
 h3 {
-	// color: $s0;
-	// font-size: $h3-size;
-	// line-height: $h3-line-height;
+	// color: constants.$s0;
+	// font-size: constants.$h3-size;
+	// line-height: constants.$h3-line-height;
 	margin: 0 0 20px;
 }
 
 h4 {
-	// color: $s0;
-	// font-size: $h4-size;
-	// line-height: $h4-line-height;
+	// color: constants.$s0;
+	// font-size: constants.$h4-size;
+	// line-height: constants.$h4-line-height;
 	margin: 0 0 20px;
 }
 
 h5 {
-	// color: $s0;
-	// font-size: $h5-size;
-	// line-height: $h5-line-height;
+	// color: constants.$s0;
+	// font-size: constants.$h5-size;
+	// line-height: constants.$h5-line-height;
 	margin: 0 0 20px;
 }
 
 h6 {
-	// color: $s0;
-	// font-size: $h6-size;
-	// line-height: $h6-line-height;
+	// color: constants.$s0;
+	// font-size: constants.$h6-size;
+	// line-height: constants.$h6-line-height;
 	margin: 0 0 20px;
 }
 
@@ -73,7 +75,7 @@ p {
 // ==============================
 a {
 	display: block;
-	color: $s0;
+	color: constants.$s0;
 
 	&:hover, &:focus {
 		text-decoration: none;
@@ -94,6 +96,6 @@ a {
 
 @media(prefers-color-scheme: dark) {
 	h1, h2, h3, h4, h5, h6, a {
-		color: $s8;
+		color: constants.$s8;
 	}
 }

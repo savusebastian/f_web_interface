@@ -1,13 +1,15 @@
+@use '../constants';
+
 .side-nav {
 	height: 100%;
 	flex-basis: 250px;
 	padding: 20px 10px;
-	background-color: $s8;
+	background-color: constants.$s8;
 	overflow-y: auto;
 
 	nav:not(:last-of-type) {
 		margin-bottom: 20px;
-		border-bottom: 1px solid $s5;
+		border-bottom: 1px solid constants.$s5;
 		padding-bottom: 20px;
 	}
 
@@ -23,16 +25,20 @@
 		text-decoration: none;
 
 		&:hover, &:focus {
-			background-color: $m1;
-			color: $sf;
+			background-color: constants.$m1;
+			color: constants.$sf;
 		}
 	}
 
+	&.hidden {
+		display: none;
+	}
+
 	@media(prefers-color-scheme: dark) {
-		background-color: $s1;
+		background-color: constants.$s1;
 
 		a {
-			color: $s6;
+			color: constants.$s6;
 		}
 	}
 }
